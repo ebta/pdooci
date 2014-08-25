@@ -302,12 +302,12 @@ class PDOOCIStatement implements \Iterator
                     call_user_func_array($argument, $temp);
                 }
                 break;
-			case \PDO::FETCH_OBJ :
-				$rst = array();
-				while($row = \oci_fetch_object($this->_stmt) ) {
-					array_push($rst, $row);
-				}
-				break;                
+            case \PDO::FETCH_OBJ :
+                $rst = array();
+                while($row = \oci_fetch_object($this->_stmt) ) {
+                    array_push($rst, $row);
+                }
+                break;                
             }
         } catch (Exception $e) {
             throw new \PDOException($e->getMessage());
